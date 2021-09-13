@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
-
-function App() {
+import MyComponent from './Example/MyComponent';
+const App = () => {
   return (
     <div className='App'>
       <header className='App-header'>
@@ -17,9 +17,11 @@ function App() {
         >
           Learn React
         </a>
+        <MyComponent/>
+        <MyComponent></MyComponent>
       </header>
     </div>
   );
-}
+};
 
 export default App;
