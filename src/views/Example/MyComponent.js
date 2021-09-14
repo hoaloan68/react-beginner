@@ -1,38 +1,24 @@
 import React from 'react';
+import ChildComponent from './ChildComponent';
 
 class MyComponent extends React.Component {
   state = {
-    name: 'thanh',
+    firstName: '',
+    lastName: '',
+    arrayJobs: [
+      {id: 'job1', title: 'dev', salary: '500'},
+      {id: 'job2', title: 'tester', salary: '600'}
+    ]
   };
 
-  handleClickButton = () => {
-    alert('click me');
-  };
-
-  handleOnChange = (event) => {
-    console.log(event.target.value, 'event target: ',event.target,'event object: ' ,event);
-    this.setState({
-      name: event.target.value,
-    });
-  };
-
+  
   render() {
-    let name1 = 'thanh';
+    console.log('render new: ', this.state);
     return (
       <>
-        {console.log('my name ', name1)}
-        hello my com {name1}
-        hello {this.state.name}
-        <div className='btn'>
-          <button onClick={() => this.handleClickButton()}>Click me</button>
-        </div>
-        <div>
-          <input
-            type='text'
-            value={this.state.name}
-            onChange={(event) => this.handleOnChange(event)}
-          ></input>
-        </div>
+        
+
+        <ChildComponent abc={this.state.arrayJobs} />
       </>
     );
   }
